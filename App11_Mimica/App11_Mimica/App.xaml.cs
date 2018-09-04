@@ -11,7 +11,7 @@ namespace App11_Mimica
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new App11_Mimica.View.Inicio();
 		}
 
 		protected override void OnStart ()

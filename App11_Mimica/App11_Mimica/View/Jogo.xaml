@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App11_Mimica.View.Jogo">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Grupo"/>
+                <Label Text="Palavra - Pontuacao"/>
+                <Label Text="***************" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Mostrar"/>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Text="200" FontSize="100" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Acertou" BackgroundColor="LightGreen"/>
+                    <Button Text="Errou" BackgroundColor="OrangeRed"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Iniciar"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
