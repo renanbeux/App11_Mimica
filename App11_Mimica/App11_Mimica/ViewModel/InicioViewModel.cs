@@ -19,6 +19,8 @@ namespace App11_Mimica.ViewModel
 
         private void IniciarJogo()
         {
+            Armazenamento.Armazenamento.Jogo = this.jogo;
+            Armazenamento.Armazenamento.RodadaAtual = 1;
             App.Current.MainPage = new View.Jogo();
         }
 
