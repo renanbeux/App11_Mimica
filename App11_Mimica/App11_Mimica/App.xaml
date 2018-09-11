@@ -3,6 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App11_Mimica.App">
 	<Application.Resources>
-    
+
+        <ResourceDictionary>
+            <!--Cabecalho-->
+            <Style TargetType="StackLayout" x:Key="Cabecalho">
+                <Setter Property="BackgroundColor" Value="#F2C14E"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+            <Style TargetType="Label" x:Key="CabecalhoTitulo">
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+            </Style>
+            
+            <!--Container-->
+            <Style TargetType="StackLayout" x:Key="Container">
+                <Setter Property="BackgroundColor" Value="#FAFF7F"/>
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#F78053"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F78053"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            
+            <!--Container Especial-->
+            <Style TargetType="StackLayout" x:Key="ContainerEspecial">
+                <Setter Property="BackgroundColor" Value="#FBFFB3"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="OutlineColor" Value="#F78053" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+        </ResourceDictionary>
+        
 	</Application.Resources>
 </Application>

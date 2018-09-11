@@ -10,6 +10,7 @@ namespace App11_Mimica.ViewModel
     public class JogoViewModel : INotifyPropertyChanged
     {
         public Grupo Grupo { get; set; }
+        public string NumeroGrupo { get; set; }
 
         public string NomeGrupo { get; set; }
 
@@ -25,8 +26,8 @@ namespace App11_Mimica.ViewModel
         private bool _IsVisibleContainerContagem;
         public bool IsVisibleContainerContagem { get { return _IsVisibleContainerContagem; } set { _IsVisibleContainerContagem = value; OnPropertyChanged("IsVisibleContainerContagem"); } }
 
-        private bool _IsVisibleContainerIniciar;
-        public bool IsVisibleContainerIniciar { get { return _IsVisibleContainerIniciar; } set { _IsVisibleContainerIniciar = value; OnPropertyChanged("IsVisibleContainerIniciar"); } }
+        private bool _IsVisibleBtnIniciar;
+        public bool IsVisibleBtnIniciar { get { return _IsVisibleBtnIniciar; } set { _IsVisibleBtnIniciar = value; OnPropertyChanged("IsVisibleBtnIniciar"); } }
 
         private bool _IsVisibleBtnMostrar;
         public bool IsVisibleBtnMostrar { get { return _IsVisibleBtnMostrar; } set { _IsVisibleBtnMostrar = value; OnPropertyChanged("IsVisibleBtnMostrar"); } }
@@ -41,8 +42,13 @@ namespace App11_Mimica.ViewModel
             Grupo = grupo;
             NomeGrupo = grupo.Nome;
 
+            if (grupo == Armazenamento.Armazenamento.Jogo.Grupo1)
+                NumeroGrupo = "Grupo 1 ";
+            else
+                NumeroGrupo = "Grupo 2 ";
+
             IsVisibleContainerContagem = false;
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleBtnMostrar = true;
             Palavra = "****************";
 
@@ -86,14 +92,16 @@ namespace App11_Mimica.ViewModel
             }
 
             IsVisibleBtnMostrar = false;
-            IsVisibleContainerIniciar = true;
+            IsVisibleBtnIniciar = true;
         }
         private void IniciarAction()
         {
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleContainerContagem = true;
-
+                        
             int i = Armazenamento.Armazenamento.Jogo.TempoPalavra;
+            TextoContagem = i.ToString();
+            i--;
             Device.StartTimer(TimeSpan.FromSeconds(1), () => { 
                     TextoContagem = i.ToString();
                     i--;
